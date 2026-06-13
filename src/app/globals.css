@@ -27,6 +27,8 @@
 }
 
 :root {
+  --font-inter: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-display: "Trebuchet MS", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
   --background: 30 100% 99%;
   --foreground: 340 64% 9%;
   --card: 0 0% 100%;
@@ -97,7 +99,6 @@ body {
 
   .floating-orb {
     @apply absolute rounded-full blur-3xl pointer-events-none;
-    animation: float 7s ease-in-out infinite;
   }
   
   .scrollbar-hide {
@@ -110,7 +111,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 ::-webkit-scrollbar {
@@ -279,4 +280,38 @@ html {
 
 .animate-pulse-ring {
   animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* Global overrides to disable all animations and transitions to make the application fast */
+*, ::before, ::after {
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}
+
+/* Keep essential loading spinners animated so the app doesn't feel broken during async actions */
+.animate-spin,
+.animate-spin::before,
+.animate-spin::after,
+[class*="animate-spin"],
+.loader,
+.spinner {
+  animation-duration: 1s !important;
+  animation-iteration-count: infinite !important;
+  animation-name: spin !important;
+  animation-timing-function: linear !important;
+}
+
+/* Keep skeleton pulse loading indicator animated */
+.animate-pulse,
+[class*="animate-pulse"] {
+  animation-duration: 2s !important;
+  animation-iteration-count: infinite !important;
+  animation-name: pulse !important;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1) !important;
+}
+
+html {
+  scroll-behavior: auto !important;
 }
