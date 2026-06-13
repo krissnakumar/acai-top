@@ -97,11 +97,11 @@ export function HomePageClient({ store, featuredProducts }: HomePageClientProps)
 
                 <div className="relative rounded-[2.5rem] border border-white/16 bg-white/10 p-5 shadow-[0_35px_110px_-55px_rgba(0,0,0,0.8)] backdrop-blur">
                   <div className="absolute inset-x-8 top-6 h-20 rounded-full bg-white/10 blur-3xl" />
-                  <div className="grid gap-4 md:grid-cols-[1.25fr_0.75fr]">
-                    <div className="rounded-[2rem] bg-[linear-gradient(160deg,#fff8f1,#f6d9e7)] p-5 text-acai-purple shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
-                      <div className="aspect-[4/4.6] rounded-[1.7rem] bg-[radial-gradient(circle_at_top,#fff_0%,#ffe4d2_38%,#f1b2cc_100%)] p-5">
-                        <div className="h-full rounded-[1.4rem] border border-acai-purple/8 bg-[linear-gradient(180deg,rgba(74,14,46,0.04),rgba(74,14,46,0.12))] p-5">
-                          <div className="mx-auto flex h-full max-w-[18rem] flex-col justify-between rounded-[1.4rem] bg-[linear-gradient(180deg,#5c1238_0%,#8c1853_58%,#d03a68_100%)] p-5 text-white shadow-[0_28px_80px_-45px_rgba(74,14,46,0.9)]">
+                  <div className="grid gap-4 md:grid-cols-[1.25fr_0.75fr] lg:grid-cols-1 xl:grid-cols-[1.25fr_0.75fr]">
+                    <div className="rounded-[2rem] bg-[linear-gradient(160deg,#fff8f1,#f6d9e7)] p-3 sm:p-5 text-acai-purple shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+                      <div className="aspect-[4/4.6] lg:aspect-auto xl:aspect-[4/4.6] rounded-[1.7rem] bg-[radial-gradient(circle_at_top,#fff_0%,#ffe4d2_38%,#f1b2cc_100%)] p-3 sm:p-5">
+                        <div className="h-full rounded-[1.4rem] border border-acai-purple/8 bg-[linear-gradient(180deg,rgba(74,14,46,0.04),rgba(74,14,46,0.12))] p-3 sm:p-5">
+                          <div className="mx-auto flex h-full min-h-[26rem] lg:min-h-0 xl:min-h-[26rem] max-w-[18rem] flex-col justify-between rounded-[1.4rem] bg-[linear-gradient(180deg,#5c1238_0%,#8c1853_58%,#d03a68_100%)] p-4 sm:p-5 text-white shadow-[0_28px_80px_-45px_rgba(74,14,46,0.9)]">
                             <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-white/65">
                               <span>Bowl signature</span>
                               <span>450ml</span>
