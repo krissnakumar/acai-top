@@ -16,7 +16,7 @@ import {
   X,
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useStoreStatus } from '@/hooks/useStoreStatus'
@@ -36,7 +36,7 @@ export function Header({ store: initialStore }: { store?: Store | null }) {
     updateQuantity,
     getSubtotal,
     getItemCount,
-  } = useCartStore()
+  } = useCart()
   const itemCount = getItemCount()
   const subtotal = getSubtotal()
   const { store: clientStore } = useStoreStatus()

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Minus, Plus, ShoppingBag, Sparkles } from 'lucide-react'
 import { useState } from 'react'
 import { Product } from '@/types/database'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { formatBRL } from '@/lib/currency'
@@ -15,8 +15,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const addItem = useCartStore((s) => s.addItem)
-  const items = useCartStore((s) => s.items)
+  const { addItem, items } = useCart()
   const [quantity, setQuantity] = useState(1)
 
   const cartItem = items.find(

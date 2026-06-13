@@ -10,7 +10,7 @@ import {
   Trash2,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { Button } from '@/components/ui/button'
 import { formatBRL } from '@/lib/currency'
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils'
 export function CartDrawer() {
   const [open, setOpen] = useState(false)
   const [cartAnimated, setCartAnimated] = useState(false)
-  const { items, removeItem, updateQuantity, getSubtotal, getItemCount } = useCartStore()
+  const { items, removeItem, updateQuantity, getSubtotal, getItemCount } = useCart()
   const itemCount = getItemCount()
   const subtotal = getSubtotal()
 

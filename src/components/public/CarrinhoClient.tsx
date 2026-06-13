@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Header } from '@/components/public/Header'
 import { Footer } from '@/components/public/Footer'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { formatBRL } from '@/lib/currency'
@@ -11,7 +11,7 @@ import { ShoppingBag, Plus, Minus, Trash2, ArrowRight, ArrowLeft } from 'lucide-
 import { Store } from '@/types/database'
 
 export function CarrinhoClient({ store }: { store: Store | null }) {
-  const { items, removeItem, updateQuantity, getSubtotal, getItemCount, clearCart } = useCartStore()
+  const { items, removeItem, updateQuantity, getSubtotal, getItemCount, clearCart } = useCart()
   const subtotal = getSubtotal()
   const itemCount = getItemCount()
 

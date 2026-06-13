@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createClient } from '@/lib/supabase/client'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { useStoreStatus } from '@/hooks/useStoreStatus'
 import { checkoutSchema, CheckoutFormData } from '@/lib/validators'
 import { generateUniqueOrderNumber } from '@/lib/order-number'
@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils'
 
 export function CheckoutForm({ store: initialStore, zones: initialZones = [] }: { store?: Store | null, zones?: DeliveryZone[] }) {
   const router = useRouter()
-  const { items, getSubtotal, clearCart } = useCartStore()
+  const { items, getSubtotal, clearCart } = useCart()
   const { store: clientStore } = useStoreStatus()
   const store = initialStore !== undefined ? initialStore : clientStore
   const [zones, setZones] = useState<DeliveryZone[]>(initialZones)

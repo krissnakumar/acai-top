@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { AcaiSize, AcaiOption } from '@/types/database'
 import { CustomAcaiSelection } from '@/types/cart'
-import { useCartStore } from '@/stores/cart-store'
+import { useCart } from '@/hooks/useCart'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
@@ -176,7 +176,7 @@ export function AcaiBuilder({ initialSizes = [], initialOptions = [], onComplete
   const [justSelected, setJustSelected] = useState<string | null>(null)
   const stepRefs = useRef<Array<HTMLButtonElement | null>>([])
 
-  const addItem = useCartStore((s) => s.addItem)
+  const { addItem } = useCart()
   const prevStepRef = useRef(0)
 
   useEffect(() => {
